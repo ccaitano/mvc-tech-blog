@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 const currentDateTime = require('../utils/helpers');
 
 // Route "/"
-router.get('/', withAuth, (req, res) => {
+router.get('/', (req, res) => {
     Posts.findAll({
             attributes: ['id', 'title', 'content', 'createdAt'],
             order: [['createdAt', 'ASC']],

@@ -1,13 +1,14 @@
 const router = require('express').Router();
 const { User, Posts, Comments } = require('../../models');
 const withAuth = require('../../utils/auth');
+const currentDateTime = require('../../utils/helpers');
 
 // GET all posts
 router.get("/", (req, res) => {
     Posts.findAll({
-            attributes: ["id", "title", "content", "upload_date"],
+            attributes: ["id", "title", "content", "createdAt"],
             order: [
-                ["upload_date", "ASC"]
+                ["createdAt", "ASC"]
             ],
             include: [{
                     model: User,
@@ -15,7 +16,7 @@ router.get("/", (req, res) => {
                 },
                 {
                     model: Comments,
-                    attributes: ["id", "comment", "comment_date", "post_id", "user_id"],
+                    attributes: ["id", "comment", "post_id", "user_id", "createdAt"],
                     include: {
                         model: User,
                         attributes: ["username"],
@@ -34,7 +35,23 @@ router.get("/", (req, res) => {
 
 
 // CREATE posts
-
+router.post('/', withAuth, (req, res) => {
+    console.log(req.session);
+    Posts.create({
+            title: req.body.title,
+            content: req.body.content,
+            user_id: req.session.user_id,
+            // upload_date: currentDateTime,
+        })
+        .then(dbPostData => {
+            res.json(dbPostData);
+            console.log(dbPostData);
+            })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
 
 // UPDATE posts
 

@@ -1,17 +1,18 @@
 const router = require('express').Router();
 const { User, Posts, Comments } = require('../models');
 const withAuth = require('../utils/auth');
+const currentDateTime = require('../utils/helpers');
 
 // Route "/"
 router.get('/', withAuth, (req, res) => {
     Posts.findAll({
-            attributes: ['id', 'title', 'content', 'upload_date'],
-            order: [['upload_date', 'ASC']],
+            attributes: ['id', 'title', 'content', 'createdAt'],
+            order: [['createdAt', 'ASC']],
             include: [
                 {
                     model: Comments,
-                    attributes: ['id', 'comment', 'comment_date', 'user_id'],
-                    order: [['comment_date', 'ASC']],
+                    attributes: ['id', 'comment', 'user_id', 'createdAt'],
+                    order: [['createdAt', 'ASC']],
                     include: {
                         model: User,
                         attributes: ['username'],
@@ -63,11 +64,11 @@ router.get('/dashboard', withAuth, (req, res) => {
                 'id',
                 'title',
                 'content',
-                'upload_date'
+                'createdAt'
             ],
             include: [{
                     model: Comments,
-                    attributes: ['id', 'comment', 'comment_date', 'user_id'],
+                    attributes: ['id', 'comment', 'user_id', 'createdAt'],
                     include: {
                         model: User,
                         attributes: ['username']
@@ -81,6 +82,7 @@ router.get('/dashboard', withAuth, (req, res) => {
         })
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
+            console.log(dbPostData);
             res.render('dashboard', { posts, loggedIn: true });
         })
         .catch(err => {
@@ -90,6 +92,11 @@ router.get('/dashboard', withAuth, (req, res) => {
 });
 
 // Route "/dashboard/new"
+router.get('/dashboard/new', (req, res) => {
+    res.render('newPost', {
+        loggedIn: true
+    })
+});
 
 // Route "/dashboard/edit/:id"
 

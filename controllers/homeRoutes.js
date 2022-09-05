@@ -99,6 +99,25 @@ router.get('/dashboard/new', (req, res) => {
 });
 
 // Route "/dashboard/edit/:id"
+router.get('/dashboard/edit/:id', (req, res) => {
+    Posts.findByPk(req.params.id, {
+        attributes: [
+            'id',
+            'title',
+            'content',
+            'createdAt'
+        ],
+    })
+    .then(dbPostData => {
+        const posts = dbPostData.get({ plain: true });
+        console.log(dbPostData);
+        res.render('updatePost', { posts, loggedIn: true });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
 // Route "/post/:id"
 

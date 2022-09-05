@@ -30,6 +30,7 @@ router.get('/login', (req, res) => {
 
     res.render('login');
 });
+
 // Route "/dashboard"
 
 // Route "/dashboard/new"

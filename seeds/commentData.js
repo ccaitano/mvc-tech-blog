@@ -2,6 +2,7 @@ const { Comments } = require('../models');
 
 const commentData = [
     {
+        id: 1,
         comment: 'Comment for Sample Post',
         comment_date: 'September 04, 2022 09:00:00',
         user_id: 1,

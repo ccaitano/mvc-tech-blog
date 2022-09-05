@@ -24,7 +24,11 @@ Posts.init(
       allowNull: false,
     },
     user_id: {
-    //   add FOREIGN KEY
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
     },
   },
   {
@@ -36,4 +40,4 @@ Posts.init(
   }
 );
 
-module.exports = Gallery;
+module.exports = Posts;

@@ -1,0 +1,23 @@
+
+{{> post posts }}
+
+{{#if loggedIn}}
+<div class="card">
+<h2 class="card-header">Leave A Comment</h2>
+<form class="comment-form" id="comment-form">
+    <div>
+        <label class="form-label" for="comment-body">Comment</label>
+        <input class="form-input" id="comment-body" name="comment-body"/>
+    </div>
+    <div>
+        <button class="btn btn-dark" type="submit">Add Comment</button>
+    </div>    
+</form>
+</div>
+{{/if}}
+
+{{> comments posts.comments}}
+
+{{#if loggedIn}}
+    <script src="/js/comments.js"></script>
+{{/if}}

@@ -32,11 +32,9 @@ router.get("/", (req, res) => {
 });
 
 // GET a single post
-router.get('/:id', (req, res) => {
-    Posts.findOne({
-            where: {
-                id: req.params.id
-            },
+router.get('/:id', withAuth, async (req, res) => {
+    try{
+    const dbPostData = Posts.findByPk(req.params.id, {
             attributes: ['id',
                 'content',
                 'title',
@@ -55,18 +53,17 @@ router.get('/:id', (req, res) => {
                     }
                 }
             ]
-        })
-        .then(dbPostData => {
-            if (!dbPostData) {
-                res.status(404).json({ message: 'No post found with this id' });
-                return;
-            }
-            res.json(dbPostData);
-        })
-        .catch(err => {
+        });
+        if (!dbPostData) {
+            res.status(404).json({ message: 'No post found with this id' });
+            return;
+        }
+        const posts = (await dbPostData).get({ plain: true });
+        res.render('viewPost', { posts, loggedIn: req.session.loggedIn })
+    } catch (err) {
             console.log(err);
             res.status(500).json(err);
-        });
+        };
 });
 
 // CREATE posts

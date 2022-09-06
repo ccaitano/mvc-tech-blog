@@ -32,17 +32,17 @@ Option 1 - Launch from the Terminal:
 Option2 - Launch from a Web Browser:
 - Visit the Tech Blog Website at [https://virtual-notepad.herokuapp.com/](https://virtual-notepad.herokuapp.com/)
 
-Note Taker Home Page:
+Tech Blog Home Page:
 
-![Screenshot of Note Taker Home Page](./public/assets/images/note-taker-home.JPG)
+![Screenshot of Tech Blog Home Page](./public/assets/images/note-taker-home.JPG)
 
-Note Taker Saved Notes Page:
+Tech Blog Dashboard Page:
 
-![Screenshot of Saved Notes Page](./public/assets/images/saved-notes.JPG)
+![Screenshot of Tech Blog Dashboard Page](./public/assets/images/saved-notes.JPG)
 
-Brief Walkthrough of Saving and Deleting Notes:
+Walkthrough of Tech Blog Functionality:
 
-![GIF of Note Taker Web App](./public/assets/images/walkthrough-gif.gif)
+![GIF of the Tech Blog Web App](./public/assets/images/walkthrough-gif.gif)
 
 ## **License**
 

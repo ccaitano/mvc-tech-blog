@@ -13,22 +13,22 @@
   <header>
     <div class="jumbotron jumbotron-fluid m-0">
         <div class="container">
-            <h1 class="display-4">Tech Blog</h1>
+            <h1 class="display-4 font-weight-bold">The Tech Blog</h1>
+            <p class="lead">Read and write about technical concepts, recent advancements, and new technologies...</p>
         </div>
     </div>
-    <nav class="justify-content-center navbar navbar-expand-lg navbar-light bg-light">
-        {{!-- <a class="navbar-brand" href="#">Navbar</a> --}}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse row justify-content-between" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link" href="/">Home</a>
-                <a class="nav-link" href="/dashboard">Dashboard</a>
+                <a class="nav-link mx-5" href="/">Home</a>
+                <a class="nav-link mx-5" href="/dashboard">Dashboard</a>
                 {{#if loggedIn}}
-                  <button id="logout" class="btn btn-secondary">Logout</button>
+                  <button id="logout" class="btn btn-secondary px-5 mx-5">Logout</button>
                 {{else}}
-                  <a class="nav-link" href="/login">Login</a>
+                  <a class="nav-link mx-5" href="/login">Login</a>
                 {{/if}}
             </div>
         </div>

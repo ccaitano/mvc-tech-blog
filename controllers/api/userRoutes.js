@@ -11,10 +11,11 @@ router.post('/', async (req, res) => {
     });
     
     req.session.loggedIn = true;
-    
+    req.session.user_id = dbUserData.id;
+    req.session.username = dbUserData.username;
+    console.log(req.session);
     req.session.save(() => {
-    
-    res.status(200).json(dbUserData);
+      res.status(200).json(dbUserData);
     });
   } catch (err) {
     console.log(err);

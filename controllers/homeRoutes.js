@@ -54,11 +54,12 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
-// Route "/dashboard"
+// Route "/dashboard
+
 router.get('/dashboard', withAuth, (req, res) => {
     Posts.findAll({
             where: {
-                user_id: req.session.user_id
+                user_id: req.session.user_id,
             },
             attributes: [
                 'id',

@@ -1,5 +1,6 @@
-<div class="card">
+<div class="card m-2">
     <div class="card-header">
-        <h4><a class="link" href="/dashboard/edit/{{id}}">{{title}}</a></h4>
+        <h4><a class="card-title text-dark" href="/dashboard/edit/{{id}}">{{title}}</a></h4>
+        <p class="card-text">Posted on {{format_date createdAt}} at {{format_time createdAt}}</p>
     </div>
 </div>

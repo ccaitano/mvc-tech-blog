@@ -32,7 +32,7 @@ router.get("/", (req, res) => {
 });
 
 // GET a single post
-router.get('/:id', withAuth, async (req, res) => {
+router.get('/:id', async (req, res) => {
     try{
     const dbPostData = Posts.findByPk(req.params.id, {
             attributes: ['id',
@@ -59,7 +59,7 @@ router.get('/:id', withAuth, async (req, res) => {
             return;
         }
         const posts = (await dbPostData).get({ plain: true });
-        res.render('viewPost', { posts, loggedIn: req.session.loggedIn })
+        res.render('viewPost', { posts })
     } catch (err) {
             console.log(err);
             res.status(500).json(err);

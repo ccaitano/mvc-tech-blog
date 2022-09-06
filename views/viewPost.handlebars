@@ -1,6 +1,8 @@
 
 {{> post posts }}
 
+{{> comments posts.comments}}
+
 {{#if loggedIn}}
 <div class="card m-2">
     {{!-- <h2 class="card-header">Leave A Comment</h2> --}}
@@ -14,10 +16,6 @@
         </div>    
     </form>
 </div>
-{{/if}}
 
-{{> comments posts.comments}}
-
-{{#if loggedIn}}
-    <script src="/js/comments.js"></script>
+<script src="/js/comments.js"></script>
 {{/if}}

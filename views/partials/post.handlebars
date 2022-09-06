@@ -1,7 +1,7 @@
-<div class="card m-2">
-    <div class="card-header">
+<div class="card border-dark m-2">
+    <div class="card-header bg-secondary">
        <h4><a class="text-dark font-weight-bold" href="/api/posts/{{id}}">{{title}}</a></h4>
-        <p>Posted by {{user.username}} on {{format_date createdAt}} at {{format_time createdAt}}</p>
+        <p class="text-dark">Posted by {{user.username}} on {{format_date createdAt}} at {{format_time createdAt}}</p>
     </div>
         <p class="card-body">{{content}}</p>
 </div>

@@ -34,15 +34,29 @@ Option2 - Launch from a Web Browser:
 
 Tech Blog Home Page:
 
-![Screenshot of Tech Blog Home Page](./public/assets/images/note-taker-home.JPG)
+![Screenshot of Tech Blog Home Page](./public/assets/mvc-blog-home.JPG)
 
 Tech Blog Dashboard Page:
 
-![Screenshot of Tech Blog Dashboard Page](./public/assets/images/saved-notes.JPG)
+![Screenshot of Tech Blog Dashboard Page](./public/assets/mvc-blog-dashboard.JPG)
+
+Tech Blog Create Post Page:
+
+![Screenshot of Tech Blog Dashboard Page](./public/assets/mvc-blog-create.JPG)
+
+Tech Blog Update Post Page:
+
+![Screenshot of Tech Blog Dashboard Page](./public/assets/mvc-blog-update.JPG)
+
+Tech Blog Add Comment Page:
+
+![Screenshot of Tech Blog Dashboard Page](./public/assets/mvc-blog-comment.JPG)
+
+
 
 Walkthrough of Tech Blog Functionality:
 
-![GIF of the Tech Blog Web App](./public/assets/images/walkthrough-gif.gif)
+![Walkthrough of the Tech Blog Web App]()
 
 ## **License**
 

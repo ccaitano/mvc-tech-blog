@@ -55,8 +55,14 @@ Tech Blog Add Comment Page:
 
 
 Walkthrough of Tech Blog Functionality:
+Part 1:
 
-![Walkthrough of the Tech Blog Web App]()
+https://user-images.githubusercontent.com/103088786/189594610-b50c1bfb-9d47-453d-9a80-9aa35a2d232f.mp4
+
+Part 2:
+
+https://user-images.githubusercontent.com/103088786/189594641-0ea74e6d-9ccb-4c69-9918-e015775b2e6b.mp4
+
 
 ## **License**
 

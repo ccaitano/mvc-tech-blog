@@ -1,3 +1,4 @@
+// Add new post form
 const newFormHandler = async (event) => {
     event.preventDefault();
   

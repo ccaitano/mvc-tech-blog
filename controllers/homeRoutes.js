@@ -3,7 +3,7 @@ const { User, Posts, Comments } = require('../models');
 const withAuth = require('../utils/auth');
 const currentDateTime = require('../utils/helpers');
 
-// Route "/"
+// Route "/" -- Homepage
 router.get('/', (req, res) => {
     Posts.findAll({
             attributes: ['id', 'title', 'content', 'createdAt'],
@@ -54,7 +54,7 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
-// Route "/dashboard
+// Route "/dashboard" -- See all of current users posts
 
 router.get('/dashboard', withAuth, (req, res) => {
     Posts.findAll({
@@ -92,14 +92,14 @@ router.get('/dashboard', withAuth, (req, res) => {
         });
 });
 
-// Route "/dashboard/new"
+// Route "/dashboard/new" -- Add new post
 router.get('/dashboard/new', (req, res) => {
     res.render('newPost', {
         loggedIn: true
     })
 });
 
-// Route "/dashboard/edit/:id"
+// Route "/dashboard/edit/:id" --- Edit Selected Post
 router.get('/dashboard/edit/:id', (req, res) => {
     Posts.findByPk(req.params.id, {
         attributes: [

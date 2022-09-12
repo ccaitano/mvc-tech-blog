@@ -1,3 +1,5 @@
+// Helper to format date and times of user posts and comments
+
 module.exports = {
     format_time: (date) => {
       return date.toLocaleTimeString();

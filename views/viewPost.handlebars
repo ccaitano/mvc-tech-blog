@@ -1,8 +1,10 @@
-
+{{!-- List current post --}}
 {{> post posts }}
 
+{{!-- List all comments associated with current post --}}
 {{> comments posts.comments}}
 
+{{!-- If the user is logged in, allow them to add comments to current post --}}
 {{#if loggedIn}}
     <div class="card m-2">
         <form class="comment-form m-2" id="comment-form">

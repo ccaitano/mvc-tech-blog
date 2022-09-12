@@ -1,3 +1,5 @@
+// Update existing post form
+
 const updateFormHandler = async (event) => {
     event.preventDefault();
 

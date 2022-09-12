@@ -87,9 +87,8 @@ router.get('/:id', (req, res) => {
             ]
         })
         .then(dbPostData => {
-            // res.json(dbPostData);
-            // console.log(dbPostData);
             const posts = dbPostData.get({ plain: true });
+            //If the user is logged in, then able to see 'add comment' form
             if(loggedIn == null){
                 res.render('viewPost', { posts, loggedIn: false });
             } else {

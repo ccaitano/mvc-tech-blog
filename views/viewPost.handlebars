@@ -4,18 +4,17 @@
 {{> comments posts.comments}}
 
 {{#if loggedIn}}
-<div class="card m-2">
-    {{!-- <h2 class="card-header">Leave A Comment</h2> --}}
-    <form class="comment-form m-2" id="comment-form">
-        <div class="form-group">
-            <label class="form-label font-weight-bold" for="comment-body">Leave a Comment:</label>
-            <input class="form-control form-input" id="comment-body" name="comment-body"/>
-        </div>
-        <div class="row justify-content-center">
-            <button class="btn btn-dark btn-lg" type="submit">Add Comment</button>
-        </div>    
-    </form>
-</div>
+    <div class="card m-2">
+        <form class="comment-form m-2" id="comment-form">
+            <div class="form-group">
+                <label class="form-label font-weight-bold" for="comment-body">Leave a Comment:</label>
+                <input class="form-control form-input" id="comment-body" name="comment-body"/>
+            </div>
+            <div class="row justify-content-center">
+                <button class="btn btn-dark btn-lg" type="submit">Add Comment</button>
+            </div>    
+        </form>
+    </div>
 
-<script src="/js/comments.js"></script>
+    <script src="/js/comments.js"></script>
 {{/if}}

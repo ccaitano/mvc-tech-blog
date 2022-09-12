@@ -120,6 +120,4 @@ router.get('/dashboard/edit/:id', (req, res) => {
     });
 });
 
-// Route "/post/:id"
-
 module.exports = router;

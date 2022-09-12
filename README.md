@@ -30,7 +30,7 @@ Option 1 - Launch from the Terminal:
 - Open `http://localhost:3001` in your web browser to see the generated HTML file
 
 Option2 - Launch from a Web Browser:
-- Visit the Tech Blog Website at [https://virtual-notepad.herokuapp.com/](https://virtual-notepad.herokuapp.com/)
+- Visit the Tech Blog Website at [https://mvc-tech-blog-cc.herokuapp.com/](https://mvc-tech-blog-cc.herokuapp.com/)
 
 Tech Blog Home Page:
 

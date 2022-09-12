@@ -32,7 +32,7 @@ router.get("/", (req, res) => {
 });
 
 // GET a single post
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
     try{
     const dbPostData = Posts.findByPk(req.params.id, {
             attributes: ['id',
